@@ -9,12 +9,12 @@ services:
     ports:
       - 3008:3008
     container_name: 'server'
-  second:
+  api:
     build: .
-    command: npm run start:dev-second
+    command: npm run start:dev-api
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
     ports:
       - 3000:3000
-    container_name: 'second'
+    container_name: 'api'

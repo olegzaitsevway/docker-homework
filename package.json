@@ -1,5 +1,5 @@
 {
-  "name": "winnlab_homework2",
+  "name": "docker-homework",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -30,10 +30,10 @@
   },
   "scripts": {
     "start": "babel-node server",
-    "start:second": "babel-node second",
+    "start:api": "babel-node api",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon --watch ./server -x \"npm run start\"",
-    "start:dev-second": "nodemon --watch ./second -x \"npm run start:second\""
+    "start:dev-api": "nodemon --watch ./api -x \"npm run start:api\""
   },
   "author": "",
   "license": "ISC",

@@ -5,6 +5,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 const band = {
   name: 'The Killers',
   song: 'Mr. Brightside',
@@ -13,6 +14,7 @@ const band = {
 app.get('/get', (req, res) => {
   const { name } = req.query;
   res.send(band[name]);
+  console.log('ALOHA', res);
 });
 
 app.post('/set', (req, res) => {
