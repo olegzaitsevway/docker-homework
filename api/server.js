@@ -31,7 +31,12 @@ app.get('/get', (req, res) => {
 });
 
 app.post('/set', (req, res) => {
-  heroes.push(req.body);
+  if (heroes.find(hero => (hero.id === req.body.id))) {
+    console.log('Hero already exist!');
+  } else {
+    heroes.push(req.body);
+  }
+
   res.send(heroes);
 });
 
