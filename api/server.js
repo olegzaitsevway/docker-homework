@@ -6,22 +6,28 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const band = {
-  name: 'The Killers',
-  song: 'Mr. Brightside',
-};
+const heroes = [
+  {
+    id: 'Superman',
+    name: 'Clark Kent',
+    age: 28,
+  },
+  {
+    id: 'Batman',
+    name: 'Bruce Wayne',
+    age: 35,
+  },
+  {
+    id: 'IronMan',
+    name: 'Tony Stark',
+    age: 40,
+  },
+];
 
 app.get('/get', (req, res) => {
-  const { name } = req.query;
-  res.send(band[name]);
-  console.log('ALOHA', res);
-});
-
-app.post('/set', (req, res) => {
-  const keys = Object.keys(req.body);
-  keys.map(key => (band[key] = req.body[key]));
-  res.send(band);
-  console.log(band);
+  const { id } = req.query;
+  const heroName = heroes.find(hero => (hero.id === id)).name;
+  res.send(heroName);
 });
 
 export default app;
