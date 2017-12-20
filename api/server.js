@@ -30,4 +30,9 @@ app.get('/get', (req, res) => {
   res.send(heroName);
 });
 
+app.post('/set', (req, res) => {
+  heroes.push(req.body);
+  res.send(heroes);
+});
+
 export default app;
